@@ -4,8 +4,11 @@ using UnityEngine;
 
 public class Collisions : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+	// Start is called before the first frame update
+	public GameObject sphere;
+	public GameObject cube;
+	public GameObject projectilePrefab;
+	void Start()
     {
 
     }
@@ -13,6 +16,8 @@ public class Collisions : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        // Collide with sphere
 
         void OnTriggerEnter(Collider other) // FIX
         {

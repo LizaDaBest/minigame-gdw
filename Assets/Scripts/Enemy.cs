@@ -9,21 +9,33 @@ public class Enemy : MonoBehaviour
     public GameObject sphere;
     public GameObject cube;
     public GameObject projectilePrefab;
-    void Start()
+    public Rigidbody rb;
+	void Start()
     {
-        
+        rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        transform.position = Vector3.MoveTowards(transform.position,cube.transform.position, (float).03);
+
+        {
+            rb.velocity = (Vector3.MoveTowards(transform.position, cube.transform.position, (float).005));
+		   //transform.position = Vector3.MoveTowards(transform.position, cube.transform.position, (float).005);
+		}
+
+
+        // Collide with cube
+
+        {
+
+		}
+
+        //Collide with projectile
+
+        {
+
+        }
+
     }
-
-    // Collision stuff FIX
-
-        
-
-
-      
 }

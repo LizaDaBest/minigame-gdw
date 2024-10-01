@@ -36,6 +36,15 @@ public class PlayerController : MonoBehaviour
 
 
         }
+
+        // Stay within camera border
+
+        {
+
+
+
+        }
+
     }
 }
 
