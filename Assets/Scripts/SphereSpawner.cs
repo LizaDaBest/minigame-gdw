@@ -2,13 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CubeSpawner : MonoBehaviour
+public class SphereSpawner : MonoBehaviour
 {
-
-    // declare prefab as a variable
-    public GameObject cube;
-
     // Start is called before the first frame update
+
+    public GameObject sphere;
     void Start()
     {
         
@@ -17,7 +15,6 @@ public class CubeSpawner : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-        Instantiate(cube);
+        Instantiate(sphere);
     }
 }

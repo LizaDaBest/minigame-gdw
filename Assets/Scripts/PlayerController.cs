@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,10 +7,12 @@ public class PlayerController : MonoBehaviour
 {
     public float speed;
     public GameObject projectilePrefab;
+    public GameObject sphere;
+    public GameObject cube;
 
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -18,7 +21,7 @@ public class PlayerController : MonoBehaviour
         float hInput = Input.GetAxisRaw("Horizontal");
         transform.Translate(Vector3.right * speed * Time.deltaTime * hInput);
         float vInput = Input.GetAxisRaw("Vertical");
-            transform.Translate(Vector3.up * speed * Time.deltaTime * vInput);
+        transform.Translate(Vector3.up * speed * Time.deltaTime * vInput);
 
         // Fire projectile
         if (Input.GetKeyDown(KeyCode.Space))
@@ -27,6 +30,12 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // Perhaps try to fix the fast diagonal movement
+        // Collision stuff FIX
+
+        {
+
+
+        }
     }
 }
+
