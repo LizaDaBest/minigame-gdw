@@ -49,6 +49,7 @@ MonoBehaviour:
   sphere: {fileID: 6128729868693260013}
   cube: {fileID: 6206618720284169418, guid: 4d383a05ac7530b40861cef9d359f902, type: 3}
   projectilePrefab: {fileID: 4092795521120413094, guid: 7a36d055c76ebcb48ab65db077733f83, type: 3}
+  rb: {fileID: 0}
 --- !u!54 &2681417773307472643
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -74,7 +75,7 @@ Rigidbody:
   m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 8
   m_CollisionDetection: 0
 --- !u!135 &-8108779061414337143
 SphereCollider:

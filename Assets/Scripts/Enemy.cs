@@ -13,6 +13,9 @@ public class Enemy : MonoBehaviour
 	void Start()
     {
         rb = GetComponent<Rigidbody>();
+        rb.AddForce(cube.transform.position - transform.position, ForceMode.Impulse);
+        StartCoroutine(enemyPath());
+        
     }
 
     // Update is called once per frame
@@ -20,8 +23,9 @@ public class Enemy : MonoBehaviour
     {
 
         {
-            rb.velocity = (Vector3.MoveTowards(transform.position, cube.transform.position, (float).005));
-		   //transform.position = Vector3.MoveTowards(transform.position, cube.transform.position, (float).005);
+            // rb.addForce = (Vector3.MoveTowards(transform.position, cube.transform.position, (float).005));
+		   // transform.position = Vector3.MoveTowards(transform.position, cube.transform.position, (float).005);
+          // rb.AddForce(cube.transform.position - transform.position, ForceMode.Acceleration);
 		}
 
 
@@ -31,11 +35,22 @@ public class Enemy : MonoBehaviour
 
 		}
 
-        //Collide with projectile
+    }
 
+    IEnumerator enemyPath()
+    {
+        yield return new WaitForSeconds(Random.Range(0,4));
+        rb.AddForce((cube.transform.position - transform.position) / 2, ForceMode.Impulse);
+        StartCoroutine(enemyPath());
+    }
+
+    private void OnCollisionEnter(Collision other)
+    {
+    if (other.gameObject.CompareTag("Projectile"))
         {
-
+            Destroy(gameObject);
         }
-
     }
 }
+
+
