@@ -46,5 +46,14 @@ public class PlayerController : MonoBehaviour
         }
 
     }
+
+    private void OnCollisionEnter(Collision other)
+    {
+        if (other.gameObject.CompareTag("Enemy"))
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }
 
