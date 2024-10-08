@@ -42,7 +42,7 @@ public class Enemy : MonoBehaviour
     IEnumerator enemyPath()
     {
         yield return new WaitForSeconds(Random.Range(0,2));
-        rb.AddForce((cube.transform.position - transform.position) / 8, ForceMode.Impulse);
+        rb.AddForce((cube.transform.position - transform.position) / 2, ForceMode.Impulse);
         StartCoroutine(enemyPath());
     }
 
@@ -56,7 +56,6 @@ public class Enemy : MonoBehaviour
         if (other.tag == "Projectile")
         {
             Destroy(gameObject);
-            count += 1;
         }
 
     }

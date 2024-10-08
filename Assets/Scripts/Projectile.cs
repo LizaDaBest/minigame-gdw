@@ -14,6 +14,8 @@ public class Projectile : MonoBehaviour
 
     }
 
+    private float topBound = 11;
+
     // Update is called once per frame
     void Update()
     {
@@ -21,16 +23,12 @@ public class Projectile : MonoBehaviour
             transform.Translate(Vector3.up * speed * Time.deltaTime);
         }
 
-        // Projectiles collide with sphere
-
         {
-            
-        }
-
-        // Collide with sphere
-
-        {
-
+            if (transform.position.y > topBound)
+            {
+                Destroy(gameObject);
+            }
+          
         }
 
     }

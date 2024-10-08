@@ -11,7 +11,6 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject sphere;
     public GameObject cube;
-    public int count = 0;
 
     void Start()
     {
@@ -33,29 +32,16 @@ public class PlayerController : MonoBehaviour
 
         }
 
-        // Collision stuff FIX
-
+        if (GameObject.FindGameObjectsWithTag("Enemy").Length == 0)
         {
-
-
-        }
-
-        // Stay within camera border
-
-        {
-
-
-
+            SceneManager.LoadScene("Movement");
         }
 
     }
 
     private void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (other.tag == ("Enemy"))
-        {
-            count += 1;
-        }
+
     }
 
 }
