@@ -1,7 +1,9 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerController : MonoBehaviour
 {
@@ -9,6 +11,7 @@ public class PlayerController : MonoBehaviour
     public GameObject projectilePrefab;
     public GameObject sphere;
     public GameObject cube;
+    public int count = 0;
 
     void Start()
     {
@@ -47,11 +50,11 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    private void OnCollisionEnter(Collision other)
+    private void OnTriggerEnter(UnityEngine.Collider other)
     {
-        if (other.gameObject.CompareTag("Enemy"))
+        if (other.tag == ("Enemy"))
         {
-            Destroy(gameObject);
+            count += 1;
         }
     }
 

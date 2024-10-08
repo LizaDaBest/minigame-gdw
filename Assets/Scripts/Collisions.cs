@@ -19,7 +19,7 @@ public class Collisions : MonoBehaviour
 
         // Collide with sphere
 
-        void OnTriggerEnter(Collider other) // FIX
+        void OnTriggerEnter(Collider other)
         {
             Destroy(gameObject);
             Destroy(other.gameObject);
